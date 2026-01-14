@@ -66,7 +66,6 @@ public class Main {
         System.out.println("The oldest person is: " + oldest.getFirstName());
 
         // Names starting with M
-
         for (Person p : people) {
             if (p.getFirstName().startsWith("M")) {
                 System.out.println(p.getFirstName() + " " + p.getLastName() + "'s first name starts with with M");
@@ -74,8 +73,10 @@ public class Main {
         }
 
         // Person who likes the colour blue
-        people.stream()
-                .filter(p -> p.getFavoriteColour().equalsIgnoreCase("Blue"))
-                .forEach(System.out::println);
+        for (Person p : people) {
+            if (p.getFavoriteColour().equalsIgnoreCase("Blue")) {
+                System.out.println(p);
+            }
+        }
     }
 }
