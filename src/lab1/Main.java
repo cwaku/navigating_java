@@ -49,11 +49,21 @@ public class Main {
         System.out.println("Average age is " + average);
 
         // Youngest and oldest
-        Person youngest = people.stream().min(Comparator.comparingInt(Person::getAge)).orElse(null);
-        Person oldest   = people.stream().max(Comparator.comparingInt(Person::getAge)).orElse(null);
 
-        if (youngest != null) System.out.println("The youngest person is: " + youngest.getFirstName());
-        if (oldest != null)   System.out.println("The oldest person is: " + oldest.getFirstName());
+        Person youngest = people.get(0);
+        Person oldest = people.get(0);
+
+        for (Person p : people) {
+            if (p.getAge() < youngest.getAge()) {
+                youngest = p;
+            }
+            if (p.getAge() > oldest.getAge()) {
+                oldest = p;
+            }
+        }
+
+        System.out.println("The youngest person is: " + youngest.getFirstName());
+        System.out.println("The oldest person is: " + oldest.getFirstName());
 
         // Names starting with M
         people.stream()
