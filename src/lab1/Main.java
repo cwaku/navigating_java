@@ -66,9 +66,12 @@ public class Main {
         System.out.println("The oldest person is: " + oldest.getFirstName());
 
         // Names starting with M
-        people.stream()
-                .filter(p -> p.getFirstName().startsWith("M"))
-                .forEach(p -> System.out.println(p.getFirstName() + " " + p.toString()));
+
+        for (Person p : people) {
+            if (p.getFirstName().startsWith("M")) {
+                System.out.println(p.getFirstName() + " " + p.getLastName() + "'s first name starts with with M");
+            }
+        }
 
         // Person who likes the colour blue
         people.stream()
