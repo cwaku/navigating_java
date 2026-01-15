@@ -22,7 +22,7 @@ public class Main {
         ian.displayPersonInfo();
 
         // 4) Display Mary’s age after ten years
-        System.out.println(mary.getFirstName() + " Beals's Age in 10 years is: " + mary.getAgeInTenYears());
+        System.out.println(mary.getFirstName() + mary.getLastName() + "'s Age in 10 years is: " + mary.getAgeInTenYears());
 
         // 5) Relationships
         Relation sisters = new Relation("Sisterhood");
