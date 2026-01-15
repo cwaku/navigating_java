@@ -1,7 +1,6 @@
 package lab1;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -49,9 +48,8 @@ public class Main {
         System.out.println("Average age is " + average);
 
         // Youngest and oldest
-
-        Person youngest = people.get(0);
-        Person oldest = people.get(0);
+        Person youngest = people.getFirst();
+        Person oldest = people.getFirst();
 
         for (Person p : people) {
             if (p.getAge() < youngest.getAge()) {
